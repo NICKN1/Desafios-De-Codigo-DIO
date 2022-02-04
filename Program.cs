@@ -1,4 +1,5 @@
-﻿using static System.Console;
+﻿using System;
+using static System.Console;
 
 namespace DIO
 {       //Desafios de Código bootcamp GFT Start #3 e #4
@@ -107,12 +108,40 @@ namespace DIO
             WriteLine($"{quociente} nota(s) de R$ 1,00");
             resto = resto % 1;
         }
+
+
+        static void desfio5(){
+            /*===============DESAFIO 5===============
+            Leia 3 valores reais (A, B e C) e verifique se eles formam ou não um
+             triângulo. Em caso positivo, calcule o perímetro do triângulo e 
+             apresente a mensagem:
+                Perimetro = XX.X
+            Em caso negativo, calcule a área do trapézio que tem A e B como base e C como 
+            altura, mostrando a mensagem
+                Area = XX.X
+            */
+            double a, b, c;
+            string[] valor = ReadLine().Split();
+            a = Convert.ToDouble(valor[0]);
+            b = Convert.ToDouble(valor[1]);
+            c = Convert.ToDouble(valor[2]);
+            double total = 0.0;
+            
+            total = (a + b) * c / 2;
+            if(total % 2 == 0){
+                WriteLine($"Area = {total.ToString("F1")}");
+
+            }
+            else{
+              total = a + b + c;
+              WriteLine($"Perimetro = {total.ToString("F1")}");
+            }
+        }
         static void Main(string[] args)
         {
         
-           
-           
-           
+        
+             
         }
     }
 }
