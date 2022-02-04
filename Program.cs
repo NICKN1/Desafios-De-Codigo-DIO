@@ -1,7 +1,7 @@
 ﻿using static System.Console;
 
 namespace DIO
-{       //Desafios de Código bootcamp GFT Start #3
+{       //Desafios de Código bootcamp GFT Start #3 e #4
     class Program
     {
         static void desafio1(){
@@ -64,9 +64,52 @@ namespace DIO
         WriteLine("VALOR A PAGAR: R$ {0:F2}", total);     
         }
         
+
+        static void desafio4(){
+        /*===============DESAFIO 4===============
+        Faça a leitura de um valor inteiro. Em seguida, calcule o menor 
+        número de notas possíveis (cédulas) onde o valor pode ser decomposto. 
+        As notas que você deve considerar são de 100, 50, 20, 10, 5, 2 e 1. 
+        Na sequência mostre o valor lido e a relação de notas necessárias.*/
+
+        int n, quociente, resto;
+
+            n = int.Parse(ReadLine());
+            WriteLine(n);
+
+            resto = n;
+    
+            quociente = resto / 100;
+            WriteLine($"{quociente} nota(s) de R$ 100,00");
+            resto = resto % 100;
+            
+            quociente = resto / 50;
+            WriteLine($"{quociente} nota(s) de R$ 50,00");
+            resto = resto % 50;
+            
+            quociente = resto / 20;
+            WriteLine($"{quociente} nota(s) de R$ 20,00");
+            resto = resto % 20;
+            
+            quociente = resto / 10;
+            WriteLine($"{quociente} nota(s) de R$ 10,00");
+            resto = resto % 10;
+            
+            quociente = resto / 5;
+            WriteLine($"{quociente} nota(s) de R$ 5,00");
+            resto = resto % 5;
+            
+            quociente = resto / 2;
+            WriteLine($"{quociente} nota(s) de R$ 2,00");
+            resto = resto % 2;
+
+            quociente = resto / 1;
+            WriteLine($"{quociente} nota(s) de R$ 1,00");
+            resto = resto % 1;
+        }
         static void Main(string[] args)
         {
-            
+        
            
            
            
