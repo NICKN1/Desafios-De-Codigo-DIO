@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using static System.Console;
 
 namespace DIO
@@ -140,7 +142,7 @@ namespace DIO
         
         
         static void desafio6(){
-            /*===============DESAFIO 5===============
+            /*===============DESAFIO 6===============
             O programa deve ler um valor inteiro D indefinidas vezes, ele só irá parar quando o valor de D 
             for igual a 0. Para cada D lido, imprima a soma dos 5 pares consecutivos a partir de D, inclusive
              ele mesmo , se for par. Se o valor de entrada for 4, por exemplo, a saída deve ser 40, que é o 
@@ -176,12 +178,112 @@ namespace DIO
                                         
              WriteLine($"{total + entrada}");  
         }
-        static void Main(string[] args)
+    }
+
+        static void desafio7()
         {
-  
-               
-         }
+            /*===============DESAFIO 7===============
+            Papai Noel está brincando com seus duendes para entretê-los durante a véspera do Natal. 
+            A brincadeira consiste nos elfos escreverem números em pedaços de papel e colocarem no 
+            gorro do Papai Noel. Após todos terminarem de colocar os números Noel sorteia um papel e
+            aquele número representa quantos "Ho" o Noel deve falar.
+
+            Seu trabalho é ajudar o Papai Noel montando um problema que mostre todos os "Ho" que ele 
+            deve falar dado o número sorteado.
+
+            Entrada
+            A entrada é composta por um único inteiro N (0 < N ≤ 106) representando quantos "Ho" 
+            serão falados por Noel.
+
+            Saída
+            A saída é composta por todos "Ho" que Papai Noel deve falar separados por um espaço. 
+            Após o último "Ho" deve ser apresentado um "!" encerrando o programa.
+            */
+
+            int N = int.Parse(Console.ReadLine());
+            int count = 1;
+            //Exibir "Ho" do papai noel
+            for (int i = 0; i < N; i++) {
+                if (   count != N       ) {
+                    Console.Write("Ho ");
+                    count++;
+                    //Complete o código no espaço em branco
+                }
+                else{
+                    Console.WriteLine("Ho!");
+                }
+
+        }
         
+    }
+
+    static void desafio8()
+    {
+        /*===============DESAFIO 8===============
+        Desafio
+        Você terá o desafio de escrever um algoritmo que leia 2 números e imprima o resultado da 
+        divisão do primeiro pelo segundo. Caso não for possível, mostre a mensagem “divisao 
+        impossivel” para os valores em questão.
+
+        Entrada
+        A entrada contém um número inteiro N. Este N será a quantidade de pares de valores inteiros
+        (X e Y) que serão lidos em seguida.
+
+        Saída
+        Para cada caso mostre o resultado da divisão com um dígito após o ponto decimal, ou “divisao 
+        impossivel” caso não seja possível efetuar o cálculo.
+        */
+
+        int limit = Int32.Parse(Console.ReadLine());
+        for (int i = 0; i < limit; i++) 
+        {
+            string[] line = Console.ReadLine().Split(" ");
+            double X = double.Parse(line[0]);
+            double Y = double.Parse(line[1]);
+            if (Y == 0) {
+                Console.WriteLine("divisao impossivel");
+            } else {
+                double divisao = X / Y; // Digite aqui o calculo da divisao
+                Console.WriteLine(divisao.ToString("N1"));
+            }
         }
     }
+    
+    static void desafio9()
+    {
+        /*
+        Faça um programa que calcule e mostre o volume de uma esfera sendo fornecido o valor de seu 
+        raio (R). A fórmula para calcular o volume é: (4/3) * pi * R3. Considere (atribua) para pi o
+        valor 3.14159.
+
+        Dica: Ao utilizar a fórmula, procure usar (4/3.0) ou (4.0/3), pois algumas linguagens (dentre
+        elas o C++), assumem que o resultado da divisão entre dois inteiros é outro inteiro.
+
+        Entrada
+        O arquivo de entrada contém um valor de ponto flutuante (dupla precisão), correspondente ao 
+        raio da esfera.
+
+        Saída
+        A saída deverá ser uma mensagem "VOLUME" conforme o exemplo fornecido abaixo, com um espaço 
+        antes e um espaço depois da igualdade. O valor deverá ser apresentado com 3 casas após o 
+        ponto.
+        */
+        double pi, raio, volume;
+        pi = 3.14159;
+        //escreva o seu código
+        raio = double.Parse(Console.ReadLine());
+        raio = (Math.Pow(raio, 3));
+        volume = (4/3.0) * pi * raio;
+        Console.WriteLine("VOLUME = "+ Math.Round(volume, 3));
+    }
+    static void Main(string[] args)
+        {
+            
+            
+       
+            
+            
+        }
 }
+}
+
